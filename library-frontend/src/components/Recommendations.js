@@ -5,22 +5,15 @@ const Recommendations = () => {
   const result = useQuery(ALL_BOOKS)
   const userResult = useQuery(ME)
 
-  if (result.loading || userResult.loading) {
+  if (result.loading || userResult.loading ) {
     return <div>Loading...</div>
   }
 
-  let recommendedBooks = result.data.allBooks
-  let favorite
-
-  if( userResult.data.me ) {
-    console.log(userResult)
-    favorite = userResult.data.me.favoriteGenre;
-    const books = result.data.allBooks
-
-    recommendedBooks = books.filter((book) =>
-      book.genres.includes(favorite)
-    )
-  }
+  const favorite = userResult.data.me.favoriteGenre
+  const books = result.data.allBooks
+  const recommendedBooks = books.filter((book) =>
+    book.genres.includes(favorite)
+  )
 
   return (
     <div>
@@ -44,7 +37,6 @@ const Recommendations = () => {
         </tbody>
       </table>
     </div>
-    
   )
 }
 
