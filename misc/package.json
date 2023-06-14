@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.7.3",
+    "dotenv": "^16.1.4",
     "graphql": "^16.6.0",
+    "mongoose": "^7.2.4",
+    "mongoose-unique-validator": "^4.0.0",
+    "nodemon": "^2.0.22",
     "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
   }
 }
